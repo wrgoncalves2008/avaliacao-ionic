@@ -22,12 +22,16 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import BooksDetails from './pages/BookDetails';
+import ListBooks from './pages/ListBooks';
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
         <Route path="/home" component={Home} exact={true} />
+        <Route path="/book/:bookID" component={BooksDetails} exact />
+        <Route path="/author/books/:authorID" component={ListBooks} exact />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
       </IonRouterOutlet>
     </IonReactRouter>
